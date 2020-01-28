@@ -1,0 +1,43 @@
+AnimalCategory
+id: ID
+name: String
+animals: [Animal]
+questions: [Question]
+info: String
+picture: String
+info: String
+
+Animal
+id: ID
+images: [Image]
+english_name: String
+scientific_name: String
+animal_category: AnimalCategory
+summary: String
+info: String
+count: Int
+profile_image: String
+
+
+Question
+id: ID
+question: String
+animal_category: AnimalCategory
+choices: [Choice]
+
+
+Choice
+id: ID
+choice: String
+question: Question
+animal: Animal
+
+
+Image
+id: ID
+src: String
+animal: Animal
+
+
+
+
