@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from .models import Category, Animal, Question, Choice
 
 
@@ -8,7 +9,6 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
         exclude = ['url']
-
 
 class AnimalSerializer(serializers.HyperlinkedModelSerializer):
     category_id = serializers.CharField(source='category.id')
