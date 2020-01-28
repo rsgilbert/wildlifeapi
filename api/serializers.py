@@ -10,6 +10,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         model = Category
         exclude = ['url']
 
+
 class AnimalSerializer(serializers.HyperlinkedModelSerializer):
     category_id = serializers.CharField(source='category.id')
 

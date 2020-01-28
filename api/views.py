@@ -1,9 +1,8 @@
+from rest_framework import viewsets
+
 from .models import Category, Animal, Question, Choice
 from .serializers import CategorySerializer, QuestionSerializer, \
     AnimalSerializer, ChoiceSerializer
-from rest_framework import viewsets
-
-
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -24,6 +23,3 @@ class QuestionViewSet(viewsets.ModelViewSet):
 class ChoiceViewSet(viewsets.ModelViewSet):
     queryset = Choice.objects.all()
     serializer_class = ChoiceSerializer
-
-
-
