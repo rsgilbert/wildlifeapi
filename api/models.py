@@ -19,16 +19,17 @@ class Animal(models.Model):
 
 
 class Question(models.Model):
-    question = models.CharField(max_length=128)
     category = models.ForeignKey(to=Category, on_delete=models.CASCADE)
+    question = models.CharField(max_length=128)
     
-    def __repr__(self):
+    def __str__(self):
         return self.question
 
 
+
 class Choice(models.Model):
-    choice = models.CharField(max_length=128)
     question = models.ForeignKey(to=Question, on_delete=models.CASCADE)
+    choice = models.CharField(max_length=128)
     animal = models.ForeignKey(to=Animal, on_delete=models.CASCADE)
 
     def __str__(self):
