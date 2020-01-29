@@ -16,7 +16,7 @@ class AnimalSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Animal
-        fields = 'id', 'category_id', 'name'
+        fields = 'id', 'category_id', 'name', 'level', 'count', 'location'
 
 
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
@@ -29,8 +29,7 @@ class QuestionSerializer(serializers.HyperlinkedModelSerializer):
 
 class ChoiceSerializer(serializers.HyperlinkedModelSerializer):
     question_id = serializers.CharField(source='question.id')
-    animal_id = serializers.CharField(source='animal.id')
 
     class Meta:
         model = Choice
-        fields = 'id', 'choice', 'question_id', 'animal_id'
+        fields = 'id', 'choice', 'correct', 'question_id', 'info'
