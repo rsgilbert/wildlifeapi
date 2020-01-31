@@ -4,6 +4,6 @@ from django.urls import path, include
 admin.autodiscover()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('api.urls')),
+    path('admin/', admin.site.urls),
 ]

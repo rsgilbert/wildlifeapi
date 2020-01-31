@@ -105,3 +105,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 
 django_heroku.settings(locals())
+
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
