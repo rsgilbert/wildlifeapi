@@ -20,6 +20,7 @@ class AnimalSerializer(serializers.HyperlinkedModelSerializer):
         fields = 'id', 'category_id', 'name', 'level', 'count', 'location'
 
 
+
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
     category_id = serializers.CharField(source='category.id')
 
