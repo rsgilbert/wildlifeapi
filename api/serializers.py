@@ -13,6 +13,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 
 class AnimalSerializer(serializers.HyperlinkedModelSerializer):
     category_id = serializers.CharField(source='category.id')
+    id = serializers.ReadOnlyField()
 
     class Meta:
         model = Animal
