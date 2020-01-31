@@ -16,7 +16,7 @@ class AnimalSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Animal
-        fields = 'id', 'category_id', 'name', 'level', 'count', 'location'
+        fields = 'category_id', 'name', 'level', 'count', 'location'
 
 
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
