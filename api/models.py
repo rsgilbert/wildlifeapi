@@ -11,6 +11,10 @@ class Level(models.TextChoices):
     Least_Concern = "Least Concern"
     Data_Deficient = "Data Deficient"
 
+class Home(models.TextChoices):
+    Land = "LAND"
+    Air = "AIR"
+    Water = "WATER"
 
 class Category(models.Model):
     name = models.CharField(max_length=128)
@@ -18,6 +22,7 @@ class Category(models.Model):
     picture = models.CharField(max_length=128, blank=True)
     level = models.CharField(max_length=128, choices=Level.choices)
     count = models.IntegerField(blank=True, null=True)
+    home = models.CharField(max_length=128, choices=Home.choices, default=Home.Land)
 
     def __str__(self):
         return self.name
